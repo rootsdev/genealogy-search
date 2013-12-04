@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="geneToolsApp" ng-csp="">
+<head>
+<meta charset="utf-8" />
+<title>Historical Data Genealogy Tools</title>
+<link rel="stylesheet" media="all" href="css/bootstrap.css">
+<link rel="stylesheet" media="all" href="css/main.css">
+</head>
+<body ng-controller="GeneToolsController">
+
+<section id="main">
+  <nav>
+    <h2>Genealogy Search Assistant</h2>
+    <button class="btn" id="close-button" title="Close">x</button>
+  </nav>
+
+  <table>
+    <tr>
+      <td>First Name(s):<br/>
+        <input type="text" ng-model="firstName" size="30"/>
+      </td>
+      <td>Last Name:<br/>
+        <input type="text" ng-model="lastName" size="30"/>
+      </td>
+    </tr>
+    <tr>
+      <td>Birth Year:<br/>
+        <input type="text" ng-model="birthYear" size="6"/>
+      </td>
+      <td>Birth Place:<br/>
+        <input type="text" ng-model="birthPlace" size="40"/><br/>
+      </td>
+    </tr>
+    <tr>
+      <td>Death Year:<br/>
+        <input type="text" ng-model="deathYear" size="6"/>
+      </td>
+      <td>Death Place:<br/>
+        <input type="text" ng-model="deathPlace" size="40"/><br/>
+      </td>
+    </tr>
+    <tr>
+      <td>Keyword(s): <span class="subtext">(e.g. carpenter, mayor)</span><br/>
+        <input type="text" ng-model="keywords" size="50"/><br/>
+      </td>
+    </tr>
+  </table>
+  
+  <div>
+    <button class="btn" ng-click="fsSearch()" title="Family Search"><img src="img/familysearch.png"/></button>
+    <button class="btn" ng-click="wrSearch()" title="We Relate"><img src="img/werelate.png"/></button>
+    <button class="btn" ng-click="mhSearch()" title="My Heritage"><img src="img/myheritage.ico"/></button>
+    <button class="btn" ng-click="geSearch()" title="Geni"><img src="img/geni.png"/></button>
+    <button class="btn" ng-click="glSearch()" title="Google"><img src="img/google.png"/></button>
+  </div>
+</section>
+
+<script src="js/util.js"></script>
+<script src="js/angular-1.1.5.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
