@@ -142,8 +142,11 @@ function buildWeRelateUrl($scope) {
   if ($scope.deathPlace) {
     query += '&dp=' + encodeURIComponent($scope.deathPlace);
   }
-  var search = 'http://www.werelate.org/wiki/Special:Search?ns=Person' + query;
-  search += '&k=' + encodeURIComponent($scope.keywords) + '&rows=20&ecp=p';
+  if ($scope.keywords) {
+    query += '&k=' + encodeURIComponent($scope.keywords);
+  }
+  var search = 'http://www.werelate.org/wiki/Special:Search?ns=Person'
+      + query + '&rows=20&ecp=p';
   return search;
 }
 
@@ -189,8 +192,7 @@ function buildGeniUrl($scope) {
  * @return {string} The resulting query URL.
  */
 function buildPeopleSearchUrl($scope) {
-  return 'https://www.google.com/search?' +
-      'tbs=ppl:1&e=ForceExperiment&expid=52793&q=' +
+  return 'https://www.google.com/search?q=' +
       buildGoogleQuery($scope) + '+~genealogy';
 }
 
@@ -271,7 +273,7 @@ function buildGoogleQuery($scope, opt_excludeDate) {
     }
   }
   if ($scope.keywords) {
-    q += encodeURIComponent(' ' + $scope.keywords);
+    q += '+' + encodeURIComponent($scope.keywords);
   }
   return q;
 }
