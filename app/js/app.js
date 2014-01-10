@@ -282,9 +282,11 @@ function buildGoogleQuery($scope, opt_excludeDate) {
 // Init setup and attach event listeners.
 document.addEventListener('DOMContentLoaded', function(e) {
   var closeButton = document.querySelector('#close-button');
-  closeButton.addEventListener('click', function(e) {
-    window.close();
-  });
+  if (closeButton) {
+    closeButton.addEventListener('click', function(e) {
+      window.close();
+    });
+  }
 
   // FILESYSTEM SUPPORT --------------------------------------------------------
   window.webkitRequestFileSystem(TEMPORARY, 1024 * 1024, function(localFs) {

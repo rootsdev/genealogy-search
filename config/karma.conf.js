@@ -5,8 +5,8 @@ module.exports = function (config) {
     files: [
       'app/lib/angular-*.js',
       'test/lib/angular/angular-mocks.js',
-      'app/js/util.js',
-      'app/js/app.js',
+      'test/lib/chrome-mocks.js',
+      'app/js/**/*.js',
       'test/unit/**/*.js'
     ],
 
